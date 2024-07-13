@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import {createGlobalStyle} from 'styled-components';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
 
-function App() {
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+ 
+`;
+
+const menuItems = [
+  {
+    text: 'Home',
+    href: '#',
+  },
+  {
+    text: 'Gallery',
+    href: '#',
+  },
+  {
+    text: 'About Us',
+    href: '#',
+  },
+  {
+    text: 'Contact',
+    href: '#',
+  },
+];
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GlobalStyle />
+      <Header logoTitle="BIRAJ SHRESTHA" menuItems={menuItems} />
+      <Hero />
+      <Projects />
+
     </div>
   );
 }
